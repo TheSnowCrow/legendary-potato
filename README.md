@@ -6,12 +6,6 @@ A privacy-first Progressive Web App (PWA) for tracking pediatric symptoms and ge
 
 ## ✨ Features
 
-### 🔒 Privacy First
-- **No PHI Collection**: Uses anonymous identifiers only (e.g., "Child 1", emojis)
-- **Local Storage Only**: All data stored in browser IndexedDB, never sent to any server
-- **HIPAA Compliant Design**: Built with privacy regulations in mind
-- **Export & Delete**: Full control over your data
-
 ### 📊 Comprehensive Tracking
 
 #### Patient Management
@@ -120,48 +114,6 @@ The built files will be in the `dist/` directory.
    git commit -m "Deploy to GitHub Pages"
    git subtree push --prefix dist origin gh-pages
    ```
-
-4. **Enable GitHub Pages**
-   - Go to your repository settings
-   - Navigate to Pages section
-   - Select `gh-pages` branch as source
-   - Your app will be available at `https://yourusername.github.io/legendary-potato/`
-
-### Alternative: GitHub Actions (Recommended)
-
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
-
 ## 🛠️ Tech Stack
 
 - **Frontend Framework**: React 18 with TypeScript
